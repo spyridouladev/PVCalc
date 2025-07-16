@@ -1,7 +1,5 @@
 # PVCalc
 
-
-
 PVCalc is a Python application that analyzes and calculates solar energy potential production based on forecast data from geographical inputs. It integrates various data sources and uses the `pvlib` Python library for solar irradiance modeling.
 
 ---
@@ -15,14 +13,6 @@ PVCalc is a Python application that analyzes and calculates solar energy potenti
 - Data sourced from reputable datasets on world cities and population density.
 - Power production visualization for selected time periods.
 
----
-
-## Usage
-
-You can run the program through:
-- The main.exe in this [drive]()
-- Running from source code requires going through the following steps
- 
 ---
 
 ## Installation
