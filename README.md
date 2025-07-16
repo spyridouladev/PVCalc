@@ -39,31 +39,67 @@ pip install -r requirements.txt
 python main.py
 ```
 ---
-
 ## Usage
-First you input the data for the PV farm you want to calculate for, keep in mind the weather data is from forecasts so it will not be 100% accurate.
 
-Example of 3 days power production :
-![3 days](images/3_days.png)
+First, input the data for the PV farm you want to calculate for.  
+Keep in mind that the weather data is based on forecasts, so it will not be 100% accurate.
 
-You can choose between fixed angle and single-axis tracker
-Fixed angle:
-![fixed angle](images/fixed_angle.png)
+### Example: 3-Day Power Production
 
-Graph for fixed angle:
-![fixed angle graph](images/fixed_angle_graph.png)
+<div align="center">
+  <img src="images/3_days.png" alt="3 days" width="600">
+</div>
 
-Tracking:
-![tracking](images/tracking.png)
+---
 
-Graph for tracking:
-![tracking graph](images/tracking_graph.png)
+### Fixed Angle Mode
 
-Results and future estimations (WARNING: Not accurate due to small sample and forecast data):
-![results](images/results.png)
+You can choose between **fixed angle** and **single-axis tracker**.
 
-Current weather data is shown beneath the input:
-![weather](images/weather.png)
+**Fixed angle input interface:**
+
+<div align="center">
+  <img src="images/fixed_angle.png" alt="fixed angle" width="500">
+</div>
+
+**Graph for fixed angle:**
+
+<div align="center">
+  <img src="images/fixed_angle_graph.png" alt="fixed angle graph" width="600">
+</div>
+
+---
+
+### Single-Axis Tracker Mode
+
+**Tracking input interface:**
+
+<div align="center">
+  <img src="images/tracking.png" alt="tracking" width="500">
+</div>
+
+**Graph for tracking:**
+
+<div align="center">
+  <img src="images/tracking_graph.png" alt="tracking graph" width="600">
+</div>
+
+---
+
+### Results and Forecast
+
+**Estimated production (⚠️ Not precise due to limited forecast data):**
+
+<div align="center">
+  <img src="images/results.png" alt="results" width="600">
+</div>
+
+**Live weather data display beneath input fields:**
+
+<div align="center">
+  <img src="images/weather.png" alt="weather" width="500">
+</div>
+
 ## Attribution and License
 
 ### Data Sources (licensed under CC BY 4.0)
