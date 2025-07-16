@@ -412,8 +412,8 @@ class LeftPanel(tk.Frame):
         self.update_cities(None)  # update city list for Greece
 
         # Set city
-        if "Nikaia" in self.city_combo["values"]:
-            self.selected_city.set("Nikaia")
+        if "Piraeus" in self.city_combo["values"]:
+            self.selected_city.set("Piraeus")
         else:
             self.selected_city.set(self.city_combo["values"][0] if self.city_combo["values"] else "")
 

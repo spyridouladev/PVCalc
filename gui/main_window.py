@@ -9,7 +9,7 @@ class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.state('zoomed')
-        self.title("Solar Efficiency Calculator and Analysis")
+        self.title("PVCalc")
 
         # Create the main horizontal paned window
         self.paned_window = tk.PanedWindow(self, orient=tk.HORIZONTAL, sashwidth=5, sashrelief=tk.RAISED)
