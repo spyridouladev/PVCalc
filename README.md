@@ -1,6 +1,8 @@
-# SolarECA
+# PVCalc
 
-SolarECA is a Python application that analyzes and calculates solar energy potential production based on forecast data from geographical inputs. It integrates various data sources and uses the `pvlib` Python library for solar irradiance modeling.
+
+
+PVCalc is a Python application that analyzes and calculates solar energy potential production based on forecast data from geographical inputs. It integrates various data sources and uses the `pvlib` Python library for solar irradiance modeling.
 
 ---
 
