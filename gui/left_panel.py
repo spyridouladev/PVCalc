@@ -193,10 +193,6 @@ class LeftPanel(tk.Frame):
         calculate_btn = tk.Button(input_frame, text="Calculate", command=self.get_weather_data)
         calculate_btn.pack(pady=10, anchor='w')
 
-        #TEST BUTTON
-        test_btn = tk.Button(input_frame, text="Test Inputs", command=self.test_inputs)
-        test_btn.pack(pady=5, anchor='w')
-
         # Result frame (below inputs)
         self.result_frame = tk.Frame(self)
         self.result_frame.pack(pady=20, fill='both', expand=True)
@@ -402,68 +398,3 @@ class LeftPanel(tk.Frame):
         )
         log(result_text)
         tk.Label(self.result_frame, text=result_text, justify="left").pack()
-
-    def test_inputs(self):
-        # Clear any previous results
-        self.clear_frame(self.result_frame)
-
-        # Set country and update cities
-        self.selected_country.set("Greece")
-        self.update_cities(None)  # update city list for Greece
-
-        # Set city
-        if "Piraeus" in self.city_combo["values"]:
-            self.selected_city.set("Piraeus")
-        else:
-            self.selected_city.set(self.city_combo["values"][0] if self.city_combo["values"] else "")
-
-        # Set rd (dust surface density)
-        self.rd_text_box.delete("1.0", tk.END)
-        self.rd_text_box.insert(tk.END, "0.0")
-
-        # Height of torque above ground
-        self.height_text_box.delete("1.0", tk.END)
-        self.height_text_box.insert(tk.END, "2.6")
-
-        # Pitch (distance between rows)
-        self.pitch_text_box.delete("1.0", tk.END)
-        self.pitch_text_box.insert(tk.END, "12")
-
-        # Number of rows
-        self.rows_text_box.delete("1.0", tk.END)
-        self.rows_text_box.insert(tk.END, "1")
-
-        # Panels per row
-        self.panels_text_box.delete("1.0", tk.END)
-        self.panels_text_box.insert(tk.END, "1")
-
-        # Panel width
-        self.panel_width_text_box.delete("1.0", tk.END)
-        self.panel_width_text_box.insert(tk.END, "2")
-
-        # Mode to fixed and set fixed value
-        self.tracking_mode.set("fixed")
-        self.update_mode_inputs()
-
-        self.fixed_angle_text_box.delete("1.0", tk.END)
-        self.fixed_angle_text_box.insert(tk.END, "32")
-       
-        # # Mode to Tracking and set tracking values
-        # self.tracking_mode.set("tracking")
-        # self.update_mode_inputs()
-
-        # # Axis azimuth
-        # self.axis_azimuth_text_box.delete("1.0", tk.END)
-        # self.axis_azimuth_text_box.insert(tk.END, "0")
-
-        # # Max angle
-        # self.max_angle_text_box.delete("1.0", tk.END)
-        # self.max_angle_text_box.insert(tk.END, "55")
-
-        # Pdc0 per module
-        self.pdc0_text_box.delete("1.0", tk.END)
-        self.pdc0_text_box.insert(tk.END, "550")
-
-        # Number of days
-        self.days_text_box.delete("1.0", tk.END)
-        self.days_text_box.insert(tk.END, "1")

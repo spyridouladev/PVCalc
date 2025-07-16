@@ -40,6 +40,31 @@ python main.py
 ```
 ---
 
+## Usage
+First you input the data for the PV farm you want to calculate for, keep in mind the weather data is from forecasts so it will not be 100% accurate.
+
+Example of 3 days power production :
+![3 days](images/3_days.png)
+
+Data Input:
+![data input](images/data_input.png)
+
+You can choose between fixed angle and single-axis tracker
+Fixed angle:
+![fixed angle](images/fixed_angle.png)
+
+Graph for fixed angle:
+![fixed angle graph](images/fixed_angle_graph.png)
+
+Tracking:
+![tracking](images/tracking.png)
+
+Graph for tracking:
+![tracking graph](images/tracking_graph.png)
+
+Results and future estimations (WARNING: Not accurate due to small sample and forecast data):
+![results](images/results.png)
+
 ## Attribution and License
 
 ### Data Sources (licensed under CC BY 4.0)
