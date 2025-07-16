@@ -3,6 +3,7 @@ logs/*
 logs/
 
 #build files
+/build_exe.py
 /build/
 /dist/*
 !/dist/*.exe
