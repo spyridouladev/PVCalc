@@ -22,12 +22,18 @@ Before running the application from source make sure you have python 3.8+ instal
 1.Clone the repository
 ```bash
 git clone https://github.com/spyridouladev/PVCalc.git
-cd SolarECA
+```
+```bash
+cd PVCalc
 ```
 2.Create and activate virtual enviroment (not necessary but recommended)
 ```bash
 python -m venv venv
+```
+```bash
 source venv/bin/activate      # On Linux/macOS
+```
+```bash
 venv\Scripts\activate.bat     # On Windows
 ```
 3.Install dependencies
