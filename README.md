@@ -19,24 +19,26 @@ PVCalc is a Python application that analyzes and calculates solar energy potenti
 
 Before running the application from source make sure you have python 3.8+ installed, if not you can install python from [Python Download](https://www.python.org/downloads/).
 
-1.Clone the repository
+1. Clone the repository
 ```bash
 git clone https://github.com/spyridouladev/PVCalc.git
 cd PVCalc
 ```
-2.Create and activate virtual enviroment (not necessary but recommended)
+2. Create and activate virtual enviroment (recommended)
 ```bash
 python -m venv venv
 ```
 ```bash
 source venv/bin/activate      # On Linux/macOS
 venv\Scripts\activate.bat     # On Windows
+venv\Scripts\Activate.ps1     # On Powershell
 ```
-3.Install dependencies
+3. Upgrade pip and install dependencies
 ```bash
+python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-4.Run the application
+4. Run the application
 ```bash
 python main.py
 ```
