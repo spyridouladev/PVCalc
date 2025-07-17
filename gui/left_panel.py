@@ -193,6 +193,18 @@ class LeftPanel(tk.Frame):
         calculate_btn = tk.Button(input_frame, text="Calculate", command=self.get_weather_data)
         calculate_btn.pack(pady=10, anchor='w')
 
+        self.bind_tab_navigation(self.rd_text_box)
+        self.bind_tab_navigation(self.height_text_box)
+        self.bind_tab_navigation(self.pitch_text_box)
+        self.bind_tab_navigation(self.rows_text_box)
+        self.bind_tab_navigation(self.panels_text_box)
+        self.bind_tab_navigation(self.panel_width_text_box)
+        self.bind_tab_navigation(self.fixed_angle_text_box)
+        self.bind_tab_navigation(self.axis_azimuth_text_box)
+        self.bind_tab_navigation(self.max_angle_text_box)
+        self.bind_tab_navigation(self.pdc0_text_box)
+        self.bind_tab_navigation(self.days_text_box)
+
         # Result frame (below inputs)
         self.result_frame = tk.Frame(self)
         self.result_frame.pack(pady=20, fill='both', expand=True)
@@ -266,6 +278,22 @@ class LeftPanel(tk.Frame):
         except Exception:
             tk.Label(self.result_frame, text=f"Please enter a valid integer for {field_name}.").pack()
             return None
+
+    def bind_tab_navigation(self, widget):
+        widget.bind("<Tab>", self.focus_next_widget)
+        widget.bind("<Shift-Tab>", self.focus_prev_widget)
+
+    def focus_next_widget(self, event):
+        next_widget = event.widget.tk_focusNext()
+        if next_widget:
+            next_widget.focus_set()
+        return "break"
+
+    def focus_prev_widget(self, event):
+        prev_widget = event.widget.tk_focusPrev()
+        if prev_widget:
+            prev_widget.focus_set()
+        return "break"
 
     def get_weather_data(self):
         self.clear_frame(self.result_frame)
