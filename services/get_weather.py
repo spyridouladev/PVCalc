@@ -2,7 +2,7 @@ import python_weather
 import pvlib
 import pandas as pd
 from services.mytimezone import get_latitude
-from services.mytimezone import get_longitude
+from services.mytimezone import get_longtitude
 from services.mytimezone import get_country_code
 from datetime import datetime, timedelta, time
 import pytz
@@ -103,7 +103,7 @@ async def get_weather_data(country, city, timezone, locations_csv_path,rd, heigh
 
     try:
         lat = get_latitude(city,country,locations_csv_path)
-        lng = get_longitude(city,country,locations_csv_path)
+        lng = get_longtitude(city,country,locations_csv_path)
         irradiance = get_irradiance(lat, lng, timezone, start_time, end_time, height, pitch, row_width, gcr,fixed_angle,axis_azimuth,max_angle)
     except Exception as e:
         log(f"Irradiance calculation has failed: {e}")
