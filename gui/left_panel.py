@@ -1,9 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
-from services.file_data import read_locations_csv
+from services.file_data import read_locations_txt
 from services.file_data import get_resource_path
 from services.get_weather import get_weather_data
 from services.mytimezone import get_timezone
+from services.mytimezone import get_country_name
 from services.utils import format_value
 from services.utils import get_closest_value
 from services.logger import log
@@ -17,9 +18,16 @@ class LeftPanel(tk.Frame):
     def __init__(self, parent, update_callback=None):
         super().__init__(parent)
         self.update_callback = update_callback
-        self.locations_csv_path = get_resource_path("resources/worldcities.csv")
-        self.countries, self.country_city_map = read_locations_csv(self.locations_csv_path)
 
+        self.file_path = get_resource_path("resources/cities500.txt")
+        self.countries_codes, self.country_city_map = read_locations_txt(self.file_path)
+
+        country_pairs = [(get_country_name(code), code) for code in self.countries_codes]
+        country_pairs.sort(key=lambda x: x[0])
+
+        self.countries = [name for name, code in country_pairs]
+        self.country_name_to_code = {name: code for name, code in country_pairs}
+        
         self.selected_country = tk.StringVar()
         self.selected_city = tk.StringVar()
 
@@ -241,8 +249,14 @@ class LeftPanel(tk.Frame):
         self.update_callback = callback
 
     def update_cities(self, event):
-        country = self.selected_country.get()
-        cities = sorted(self.country_city_map.get(country, []))
+        country_name = self.selected_country.get()
+        country_code = self.country_name_to_code.get(country_name)
+        if not country_code:
+            self.city_combo['values'] = []
+            self.city_combo.set("No cities")
+            return
+
+        cities = sorted(self.country_city_map.get(country_code, []))
         self.city_combo["values"] = cities
         if cities:
             self.city_combo.set(cities[0])
@@ -297,7 +311,13 @@ class LeftPanel(tk.Frame):
 
     def get_weather_data(self):
         self.clear_frame(self.result_frame)
-        user_country = self.selected_country.get()
+        country_name = self.selected_country.get()
+        
+        user_country = self.country_name_to_code.get(country_name)
+        if not user_country:
+            tk.Label(self.result_frame, text="Please select a valid country.").pack()
+            return
+        
         user_city = self.selected_city.get()
 
         rd = self.validate_float(self.rd_text_box, "rd", allow_zero=True, positive_only=False)
@@ -350,7 +370,7 @@ class LeftPanel(tk.Frame):
             return
 
         # Get timezone and check if it has a valid value
-        tz = get_timezone(user_city, user_country, self.locations_csv_path)
+        tz = get_timezone(user_city, user_country, self.file_path)
         tz_str = tz if tz else "Timezone not found"
         user_time = datetime.now(pytz.timezone(tz)).strftime("%Y-%m-%d %H:%M:%S") if tz else "N/A"
 
@@ -376,7 +396,7 @@ class LeftPanel(tk.Frame):
                 return
             # Pass fixed_angle; pass None for tracking params
             weather_data = asyncio.run(get_weather_data(
-                user_country, user_city, tz, self.locations_csv_path,
+                user_country, user_city, tz, self.file_path,
                 rd, height, pitch, row_width, gcr, num_days,
                 fixed_angle=fixed_angle,
                 axis_azimuth=None,
@@ -391,7 +411,7 @@ class LeftPanel(tk.Frame):
                 return
             # Pass tracking params; pass None for fixed_angle
             weather_data = asyncio.run(get_weather_data(
-                user_country, user_city, tz, self.locations_csv_path,
+                user_country, user_city, tz, self.file_path,
                 rd, height, pitch, row_width, gcr, num_days,
                 fixed_angle=None,
                 axis_azimuth=axis_azimuth,

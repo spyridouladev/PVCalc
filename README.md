@@ -111,16 +111,21 @@ This project incorporates concepts and correlation models derived from:
 
 > Gholami, A., Ameri, M., Zandi, M., Gavagsaz Ghoachani, R., Jafarzadegan Gerashi, S., Kazem, H. A., & Al-Waeli, A. H. A. (2023). *Impact of harsh weather conditions on solar photovoltaic cell temperature: Experimental analysis and thermal-optical modeling*. Solar Energy, 252, 176–194. https://doi.org/10.1016/j.solener.2023.01.039
 
-### Data Sources (licensed under CC BY 4.0)
+### Data Sources
 
-- **Basic World Cities Database** by SimpleMaps, licensed under [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Source: [https://simplemaps.com/data/world-cities](https://simplemaps.com/data/world-cities)  
-- **Population density data** from *The Center for International Earth Science Information Network (CIESIN), Columbia University*, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Source: [Gridded Population of the World, Version 4 (GPWv4)](http://dx.doi.org/10.7927/H4X63JVC)
+This project uses geographical data from [GeoNames](https://download.geonames.org/).
 
-Please review these licenses for detailed terms and attribution requirements.
+The GeoNames data is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The data is provided "as is" without any warranty.
+
+You are free to use, modify, and distribute this data, including for commercial purposes, provided that appropriate credit is given to GeoNames.
+
+A copy of the GeoNames license is included in the `licenses/` directory of this project and you can view it [here](licenses/ccby4.txt).
+
+For more details and to download the data, visit [https://download.geonames.org/](https://download.geonames.org/).
 
 ---
 
 ### Software Library (licensed under BSD 3-Clause)
 
-This project uses **pvlib python**, licensed under the BSD 3-Clause License. The copyright and license notice for pvlib are included with this project.
+This project uses **pvlib python**, licensed under the [BSD 3-Clause License](licenses/BSD3.txt). The copyright and license notice for pvlib are included with this project.
 
