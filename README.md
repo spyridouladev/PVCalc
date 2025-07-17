@@ -10,7 +10,7 @@ PVCalc is a Python application that analyzes and calculates solar energy potenti
 - Calculate solar irradiance and other relevant solar energy metrics.
 - Support for dust surface density input to refine calculations.
 - Interactive GUI built with Tkinter.
-- Data sourced from reputable datasets on world cities and population density.
+- Data sourced from reputable dataset on world cities.
 - Power production visualization for selected time periods.
 
 ---
