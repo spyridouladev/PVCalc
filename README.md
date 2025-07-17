@@ -102,6 +102,11 @@ You can choose between **fixed angle** and **single-axis tracker**.
 
 ## Attribution and License
 
+### Cell Temperature model
+This project incorporates concepts and correlation models derived from:
+
+> Gholami, A., Ameri, M., Zandi, M., Gavagsaz Ghoachani, R., Jafarzadegan Gerashi, S., Kazem, H. A., & Al-Waeli, A. H. A. (2023). *Impact of harsh weather conditions on solar photovoltaic cell temperature: Experimental analysis and thermal-optical modeling*. Solar Energy, 252, 176–194. https://doi.org/10.1016/j.solener.2023.01.039
+
 ### Data Sources (licensed under CC BY 4.0)
 
 - **Basic World Cities Database** by SimpleMaps, licensed under [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Source: [https://simplemaps.com/data/world-cities](https://simplemaps.com/data/world-cities)  
