@@ -12,6 +12,7 @@ from datetime import datetime
 import pytz
 import pandas as pd 
 from PIL import Image, ImageTk
+from services.visualize_world import visualize_world
 
 class LeftPanel(tk.Frame):
     def __init__(self, parent, update_callback=None):
@@ -192,6 +193,9 @@ class LeftPanel(tk.Frame):
         # Calculate button on its own line (left aligned)
         calculate_btn = tk.Button(input_frame, text="Calculate", command=self.get_weather_data)
         calculate_btn.pack(pady=10, anchor='w')
+
+        visualize_btn = tk.Button(input_frame, text="Visualize Map", command=visualize_world)
+        visualize_btn.pack(pady=5, anchor='w')
 
         self.bind_tab_navigation(self.rd_text_box)
         self.bind_tab_navigation(self.height_text_box)
